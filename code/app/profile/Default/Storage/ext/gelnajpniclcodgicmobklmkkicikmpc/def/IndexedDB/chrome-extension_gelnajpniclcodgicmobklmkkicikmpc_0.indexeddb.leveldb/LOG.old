@@ -1,0 +1,6 @@
+2016/09/22-18:09:35.884 10743 Reusing MANIFEST /home/squallcx/code/line/code/app/profile/Default/Storage/ext/gelnajpniclcodgicmobklmkkicikmpc/def/IndexedDB/chrome-extension_gelnajpniclcodgicmobklmkkicikmpc_0.indexeddb.leveldb/MANIFEST-000001
+2016/09/22-18:09:35.884 10743 Recovering log #3
+2016/09/22-18:09:35.911 10743 Reusing old log /home/squallcx/code/line/code/app/profile/Default/Storage/ext/gelnajpniclcodgicmobklmkkicikmpc/def/IndexedDB/chrome-extension_gelnajpniclcodgicmobklmkkicikmpc_0.indexeddb.leveldb/000003.log 
+2016/09/22-18:09:44.941 11017 Level-0 table #5: started
+2016/09/22-18:09:44.967 11017 Level-0 table #5: 1922291 bytes OK
+2016/09/22-18:09:44.984 11017 Delete type=0 #3

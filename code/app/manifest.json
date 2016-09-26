@@ -1,0 +1,39 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "LINE",
+  "description": "__MSG_appDescription__",
+  "version": "1.4.4",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "app": {
+    "background": {
+      "scripts": [
+        "main.js"
+      ]
+    }
+  },
+  "web_accessible_resources": ["*"],
+  "permissions": [
+    "storage",
+    "desktopCapture",
+    "notifications",
+    "system.network",
+    "alwaysOnTopWindows",
+    "app.window.fullscreen",
+    "idle",
+    "webview",
+    "<all_urls>",
+    {
+      "fileSystem": [
+        "write",
+        "directory"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "res/img/line_logo_32x32.png",
+    "48": "res/img/line_logo_48x48.png",
+    "128": "res/img/line_logo_128x128.png"
+  }
+}

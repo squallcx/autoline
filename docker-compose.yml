@@ -1,0 +1,11 @@
+
+line:
+  build: .
+  # image: squallcx/line
+  # volumes:
+  #   - ./ext:/ext:rw
+  ports:
+    - "5900:5900"
+    - "8787:8787"
+  command: ["/usr/bin/supervisord"]
+

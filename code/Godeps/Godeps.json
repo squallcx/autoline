@@ -1,0 +1,37 @@
+{
+	"ImportPath": "code/line/code",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.com/sclevine/agouti",
+			"Comment": "v2-latest-72-gdab7b01",
+			"Rev": "dab7b01f206e43278618a7e0f5bc3ea39e48445a"
+		},
+		{
+			"ImportPath": "github.com/sclevine/agouti/api",
+			"Comment": "v2-latest-72-gdab7b01",
+			"Rev": "dab7b01f206e43278618a7e0f5bc3ea39e48445a"
+		},
+		{
+			"ImportPath": "github.com/sclevine/agouti/api/internal/bus",
+			"Comment": "v2-latest-72-gdab7b01",
+			"Rev": "dab7b01f206e43278618a7e0f5bc3ea39e48445a"
+		},
+		{
+			"ImportPath": "github.com/sclevine/agouti/api/internal/service",
+			"Comment": "v2-latest-72-gdab7b01",
+			"Rev": "dab7b01f206e43278618a7e0f5bc3ea39e48445a"
+		},
+		{
+			"ImportPath": "github.com/sclevine/agouti/internal/element",
+			"Comment": "v2-latest-72-gdab7b01",
+			"Rev": "dab7b01f206e43278618a7e0f5bc3ea39e48445a"
+		},
+		{
+			"ImportPath": "github.com/sclevine/agouti/internal/target",
+			"Comment": "v2-latest-72-gdab7b01",
+			"Rev": "dab7b01f206e43278618a7e0f5bc3ea39e48445a"
+		}
+	]
+}

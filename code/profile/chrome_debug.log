@@ -1,0 +1,9 @@
+[17967:17967:0926/103408:WARNING:password_store_factory.cc(250)] Using basic (unencrypted) store for password storage. See https://chromium.googlesource.com/chromium/src/+/master/docs/linux_password_storage.md for more information about password storage options.
+[18047:18047:0926/103410:WARNING:webmediaplayer_impl.cc(341)] Using MultibufferDataSource
+[17967:17967:0926/103411:INFO:CONSOLE(25)] "asmCrypto PRNG not seeded; your security relies on your system PRNG. If this is not acceptable, use asmCrypto.random.seed().", source: chrome-extension://opmkbcmmieghnabgmknioleikkdabipg/src/Urwh_.js (25)
+[17967:17967:0926/103412:INFO:CONSOLE(3)] "'KeyboardEvent.keyIdentifier' is deprecated and will be removed in M54, around October 2016. See https://www.chromestatus.com/features/5316065118650368 for more details.", source: chrome-extension://opmkbcmmieghnabgmknioleikkdabipg/src/Urwh_.js (3)
+[18047:18047:0926/103412:ERROR:PlatformKeyboardEvent.cpp(94)] Not implemented reached in static bool blink::PlatformKeyboardEvent::currentCapsLockState()
+[17967:17967:0926/103413:INFO:CONSOLE(25)] "asmCrypto PRNG not seeded; your security relies on your system PRNG. If this is not acceptable, use asmCrypto.random.seed().", source: chrome-extension://opmkbcmmieghnabgmknioleikkdabipg/src/Urwh_.js (25)
+[17967:17967:0926/103414:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.always_authorize
+[17967:17967:0926/103414:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown plugins.allow_outdated
+[17967:17967:0926/103414:WARNING:pref_notifier_impl.cc(27)] pref observer found at shutdown printing.enabled
