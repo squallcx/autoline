@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -80,7 +81,7 @@ func checkHandler(w http.ResponseWriter, r *http.Request) {
 func setHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	_ = r.ParseForm()
-	html := `
+	html := fmt.Sprintf(`
 <html  style="text-align:center">
 
 <body>
@@ -116,22 +117,22 @@ function reloadIFrame() {
 var jqxhr = $.get( "/check", function() {
 })
   .done(function() {
-  document.getElementById("line").src="http://127.0.0.1:8787/vnc_viewonly.html?password=1234&autoconnect=true";
+  document.getElementById("line").src="http://%s/vnc_viewonly.html?password=1234&autoconnect=true";
   })
   .fail(function() {
-  window.setTimeout("reloadIFrame();", 1000);
+  window.setTimeout("reloadIFrame();", 3000);
   });
 
 }
 $( document ).ready(function() {
 
-  window.setTimeout("reloadIFrame();", 1000);
+  window.setTimeout("reloadIFrame();", 3000);
 });
 </script>
 <iframe id="line" name="line"  width="1024" height="768"  scrolling="no" style="width: 1024px; height: 768px;" src=""></iframe>
 </body>
 </html>
-`
+`, os.Getenv("ip"))
 	fmt.Fprintln(w, html)
 
 }
@@ -141,8 +142,8 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 	_ = r.ParseForm()
 
 	u := userData{
-		Username: r.FormValue("username"),
-
+		Username:  r.FormValue("username"),
+		Password:  r.FormValue("password"),
 		DealySec:  r.FormValue("dealysec"),
 		Context:   r.FormValue("context"),
 		Container: fmt.Sprintf("line%s", ""),
