@@ -17,6 +17,7 @@ RUN go version
 RUN go env
 RUN go get github.com/tools/godep
 
+RUN apt update && apt-get install xdotool
 
 
 COPY conf/statup /root/.fluxbox/startup

@@ -203,7 +203,7 @@ func remove(user userData) {
 func create(user userData) {
 	var err error
 	remove(user)
-
+	check("", err)
 	dockerContainer, err := client.CreateContainer(
 		docker.CreateContainerOptions{
 			Config: &docker.Config{
@@ -219,6 +219,7 @@ func create(user userData) {
 			},
 			Name: user.Container,
 			HostConfig: &docker.HostConfig{
+				Binds: []string{fmt.Sprintf("%s/profile:/profile", "")},
 				PortBindings: map[docker.Port][]docker.PortBinding{
 					"8787/tcp": []docker.PortBinding{
 						docker.PortBinding{

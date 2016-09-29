@@ -6,8 +6,10 @@ import (
 	"github.com/sclevine/agouti/api"
 	"log"
 	"os"
+	"os/exec"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -20,7 +22,28 @@ func check(err error) bool {
 }
 
 // LoginWithUsername
+var cl int
+
 func LoginWithUsername() {
+
+	var wg sync.WaitGroup
+	wg.Add(1)
+
+	ch := make(chan int)
+	go func() {
+		for {
+			com := exec.Command("xdotool", "key", "Return")
+			com.Run()
+			log.Println("click=============")
+			if cl == 1 {
+				log.Println("done=============")
+				wg.Done()
+				return
+			}
+			time.Sleep(1.5 * 1e9)
+		}
+	}()
+
 	var err error
 	dir, err := os.Getwd()
 	check(err)
@@ -31,10 +54,8 @@ func LoginWithUsername() {
 				// fmt.Sprintf("--proxy-server=http://%s", proxy),
 				"--no-sandbox",
 				"--force-device-scale-factor=0.5",
-				"--kiosk",
-				"--fullscreen",
 				fmt.Sprintf("load-and-launch-app=%s/app", dir),
-				fmt.Sprintf("--user-data-dir=%s/profile", dir),
+				"--user-data-dir=/profile",
 			},
 		},
 	}))
@@ -50,9 +71,13 @@ func LoginWithUsername() {
 	var windows []*api.Window
 	for {
 
+		log.Println("check windows")
 		time.Sleep(1 * 1e9)
 		windows, err = page.Session().GetWindows()
 		if len(windows) == 2 {
+			cl = 1
+			close(ch)
+			wg.Wait()
 			break
 		}
 	}
@@ -63,6 +88,8 @@ func LoginWithUsername() {
 		log.Println(i, window.ID)
 		windowID = window.ID
 	}
+
+	page.Session().SetWindow(windows[0])
 	page.CloseWindow()
 	log.Println("LineID is", windowID)
 	page.Session().SetWindow(windows[1])
